@@ -6,7 +6,7 @@ name: calle-os
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: quay.io/fedora/fedora-bootc:44
 image-version: 44 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -19,6 +19,11 @@ modules:
 
   - type: dnf
     repos:
+      files:
+        - 1password.repo
+        - mullvad.repo
+        - vscode.repo
+        - tailscale.repo
       copr:
         - scottames/ghostty
     install:
@@ -26,6 +31,14 @@ modules:
         - ghostty
         - vim
         - tmux
+        - 1password
+        - 1password-cli
+        - mullvad-vpn
+        - code
+        - tailscale
+    group-install:
+      with-optional: true
+      packages: kde-desktop-environment
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -41,5 +54,12 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
       - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: systemd
+    system:
+      enabled:
+        flatpak-system-update.timer
+        podman.socket
+        tailscaled
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
