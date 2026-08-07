@@ -58,8 +58,8 @@ modules:
   - type: systemd
     system:
       enabled:
-        flatpak-system-update.timer
-        podman.socket
-        tailscaled
+        - flatpak-system-update.timer
+        - podman.socket
+        - tailscaled
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
