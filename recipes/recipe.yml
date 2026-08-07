@@ -59,7 +59,6 @@ modules:
   - type: systemd
     system:
       enabled:
-        - flatpak-system-update.timer
         - podman.socket
         - tailscaled.service
 
