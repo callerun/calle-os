@@ -38,7 +38,8 @@ modules:
         - tailscale
     group-install:
       with-optional: true
-      packages: kde-desktop-environment
+      packages: 
+        - kde-desktop-environment
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
