@@ -4,6 +4,22 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 
 After setup, it is recommended you update this README to describe your custom image.
 
+## What is included?
+
+Base is fedora-bootc, as of writing fedora 44
+
+KDE is installed as DE.
+
+And some packages that I want to use:
+
+- ghostty
+- vim
+- tmux
+- 1password
+- mullvad vpn
+- visual studio code
+- tailscale
+
 ## Installation
 
 > [!WARNING]  
