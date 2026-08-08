@@ -4,11 +4,9 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 
 After setup, it is recommended you update this README to describe your custom image.
 
-## What is included?
+## What is included (added by me)?
 
-Base is fedora-bootc, as of writing fedora 44
-
-KDE is installed as DE.
+Base is ublue kinoite, as of writing fedora 44
 
 And some packages that I want to use:
 
@@ -19,6 +17,7 @@ And some packages that I want to use:
 - mullvad vpn
 - visual studio code
 - tailscale
+- virtualization "bundle of packages"
 
 ## Installation
 
